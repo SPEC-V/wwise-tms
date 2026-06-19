@@ -2,43 +2,45 @@
 @import './styles/mobile.css';
 
 :root {
-  /* Pink primary */
-  --primary: #ec4899;
-  --primary-dark: #db2777;
-  --primary-light: rgba(236, 72, 153, 0.1);
-  --accent: #f472b6;
-  --accent-dark: #ec4899;
+  /* Red primary — used for buttons, CTAs, alerts */
+  --primary: #dc2626;
+  --primary-dark: #b91c1c;
+  --primary-light: rgba(220, 38, 38, 0.1);
 
-  /* Surfaces */
-  --bg: #faf5f8;
+  /* Blue accent — used for headers, sidebar, in-progress/active states */
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
+
+  /* Surfaces — white, clean */
+  --bg: #f5f8fc;
   --surface: #ffffff;
-  --surface-hover: #fdf2f8;
-  --sidebar-bg: #18101a;
+  --surface-hover: #eff6ff;
+  --sidebar-bg: #0b1f4d;
   --sidebar-border: rgba(255, 255, 255, 0.08);
 
   /* Text */
-  --text-primary: #1a0a14;
-  --text-muted: #6b5a65;
+  --text-primary: #0f172a;
+  --text-muted: #64748b;
   --text-on-dark: rgba(255, 255, 255, 0.85);
   --text-on-dark-muted: rgba(255, 255, 255, 0.45);
 
   /* Borders & effects */
-  --border: #eadde6;
-  --border-strong: #ec4899;
+  --border: #dbe3ef;
+  --border-strong: #2563eb;
   --danger: #dc2626;
   --success: #059669;
   --warning: #d97706;
 
-  /* Sharp corners — cards & buttons */
-  --radius: 0;
-  --radius-lg: 0;
-  --radius-sm: 0;
+  /* Rounded corners — cards & buttons */
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-sm: 8px;
   --radius-icon: 12px;
   --radius-avatar: 50%;
-  --icon-circle-border: 2px dotted;
+  --icon-circle-border: 2px solid;
 
-  --shadow: 4px 4px 0 rgba(236, 72, 153, 0.1);
-  --shadow-lg: 8px 8px 0 rgba(236, 72, 153, 0.14);
+  --shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 8px 20px rgba(15, 23, 42, 0.12), 0 2px 6px rgba(15, 23, 42, 0.06);
   --font: 'DM Sans', system-ui, -apple-system, sans-serif;
 }
 
@@ -97,18 +99,18 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary {
   background: var(--primary);
   color: white;
-  box-shadow: 4px 4px 0 rgba(236, 72, 153, 0.3);
+  box-shadow: var(--shadow);
 }
 
 .btn-primary:hover:not(:disabled) {
   background: var(--primary-dark);
-  transform: translate(-1px, -1px);
-  box-shadow: 5px 5px 0 rgba(236, 72, 153, 0.35);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
 }
 
 .btn-primary:active:not(:disabled) {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 rgba(236, 72, 153, 0.2);
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.1);
 }
 
 .btn-secondary {
@@ -121,21 +123,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-secondary:hover:not(:disabled) {
-  border-color: var(--primary);
-  color: var(--primary);
-  background: var(--surface);
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--surface-hover);
 }
 
 .btn-full {
   width: 100%;
 }
 
-/* Status badges — sharp tags */
+/* Status badges — rounded pills */
 .status-badge {
   font-size: 0.625rem;
   font-weight: 700;
   padding: 0.3rem 0.625rem;
-  border-radius: var(--radius);
+  border-radius: 999px;
   white-space: nowrap;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -149,9 +151,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .status-in-progress {
-  background: rgba(236, 72, 153, 0.1);
-  color: #db2777;
-  border-color: rgba(236, 72, 153, 0.3);
+  background: rgba(37, 99, 235, 0.1);
+  color: #1d4ed8;
+  border-color: rgba(37, 99, 235, 0.3);
 }
 
 .status-completed {
@@ -197,7 +199,7 @@ h1, h2, h3, h4, h5, h6 {
   content: none;
 }
 
-/* Dotted circle icon wrappers */
+/* Rounded circle icon wrappers */
 .icon-circle {
   display: flex;
   align-items: center;
@@ -239,5 +241,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-header h2 svg {
-  color: var(--primary);
+  color: var(--accent);
 }
