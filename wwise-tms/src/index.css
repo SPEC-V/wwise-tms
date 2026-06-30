@@ -2,10 +2,10 @@
 @import './styles/mobile.css';
 
 :root {
-  /* Red primary — used for buttons, CTAs, alerts */
-  --primary: #08c1f0;
-  --primary-dark: #70f5ee;
-  --primary-light: rgba(40, 3, 250, 0.911);
+  /* Purple primary — used for buttons, CTAs, alerts */
+--primary: #7c3aed;
+--primary-dark: #5b21b6;
+--primary-light: rgba(124, 58, 237, 0.15); 
 
   /* Blue accent — used for headers, sidebar, in-progress/active states */
   --accent: #2563eb;
